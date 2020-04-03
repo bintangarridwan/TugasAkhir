@@ -21,12 +21,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private int[] mImages = new int[] {
-            R.drawable.header, R.drawable.image_hokben, R.drawable.image_yoshinoya, R.drawable.image_yoshinoya2
-    };
-    private String[] mImagesTittle = new String[]{
-            "Cateringku", "Menu Hokben", "Promo Yoshinoya", "Menu Yoshinoya"
-    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Beranda()).commit();
     }
+
     private BottomNavigationView.OnNavigationItemSelectedListener navlistener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -48,9 +43,6 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navPesanan:
                     selectedFragment = new Pesanan();
                     break;
-                case R.id.navCart:
-                    selectedFragment = new Keranjang();
-                    break;
                 case R.id.navAccount:
                     selectedFragment = new Akun();
                     break;
@@ -60,4 +52,5 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
     };
+
 }
